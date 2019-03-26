@@ -8,7 +8,10 @@ You may assume nums1 and nums2 cannot be both empty.
 
 from typing import List
 
-
+"""
+This is correct (minus the edge cases with empty lists) but runtime is O[(n+m)/2] not the recommended
+O[log(m+n)]
+"""
 def findMedianSortedArrays(nums1: List[int], nums2: List[int]) -> float:
     total_size = len(nums1) + len(nums2)
     midnum = total_size // 2 + 1
