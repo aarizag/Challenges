@@ -1,8 +1,8 @@
-from retro import make
+import retro
 
 
 def main():
-    env = make(game='SonicTheHedgehog-Genesis', state='LabyrinthZone.Act1')
+    env = retro.make(game='Airstriker-Genesis', state='Level1')
     obs = env.reset()
     while True:
         obs, rew, done, info = env.step(env.action_space.sample())
