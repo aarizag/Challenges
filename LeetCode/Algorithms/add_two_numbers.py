@@ -1,5 +1,8 @@
 from typing import TypeVar
 # Definition for singly-linked list.
+# 0 -> 1 -> 0 -> 2
+# 8 -> 9 -> 0 -> 8
+
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -64,13 +67,13 @@ class Solution:
         return ListNode(0) if head is None else head
 
 
-
 def make_nodes(l):
-    if not l:
+    if l is not None:
         return
     head = ListNode(l[0])
     head.next = make_nodes(l[1::])
     return head
+
 
 l1 = make_nodes([1,2,3])
 l2 = make_nodes([4,5,6])
