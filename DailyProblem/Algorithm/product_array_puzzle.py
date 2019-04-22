@@ -73,8 +73,8 @@ def with_division(nums):  # O(2n)
     Get the resulting list by dividing by each element at its index
     """
     # Recursive Lambda - multiplication equivalent of sum()
-    product = lambda x, acc: product(x[1:], acc * x[0]) if x[1:] else acc * x[0]  # tail recursive
-    total = product(nums, 1)
+    product = lambda x: x[0] * product(x[1:]) if x[1:] else x[0]
+    total = product(nums)
     return [total // n for n in nums]
 
 
