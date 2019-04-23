@@ -17,12 +17,25 @@ def positive_number_generator(x=1):
         x += 1
 
 
-def decode(message: int) -> [str]:
-    mapping = {n: c for n, c in zip(range(1, 27), ascii_lowercase)}
+def decode(message: str) -> [str]:
+    mapping = {str(n): c for n, c in zip(range(1, 27), ascii_lowercase)}
+    total = 0
+
+    for c in combos(message):
+        if c in mapping:
+            total += 1
+    return total
 
 
-def permutations(num: int) -> [int]:
+def combos(msg: str) -> [str]:
+    combs = [msg]
+    i, cur = 0, ""
+    while i < len(msg):
+        cur += msg[i]
+        i += 1
+        if i % 2 == 0:
+            combs.append(cur)
+            cur = ""
+    return combs + [cur]
 
-    return
-
-decode(111)
+print(decode('111'))

@@ -68,6 +68,7 @@ def iterative_traversal(node):
             stack.append(n.left)
         print(n)
 
+
 root = Node(1)
 root.left = Node(2, root)
 root.right = Node(3, root)
