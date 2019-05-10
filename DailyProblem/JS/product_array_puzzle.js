@@ -1,3 +1,5 @@
+import "./tester";
+
 
 function optimized_prod(nums){
     let x = 1;
@@ -44,14 +46,13 @@ function brute_force(nums) {
 }
 
 
+function test_prod_puzzle(){
+    let test1 = [1, 2, 3, 4, 5];
+    let test2 = [5, 3, 6, 1];
+    let test3 = [2, 4, 6, 8];
+    let test4 = [3];
 
-let test1 = [1, 2, 3, 4, 5];
-let test2 = [5, 3, 6, 1];
-let test3 = [2, 4, 6, 8];
-let test4 = [3];
-
-let tests = [test1, test2, test3, test4];
-
-for (let i = 0; i< 4; i++){
-    console.log(brute_force(tests[i]));
+    let tests = [test1, test2, test3, test4];
+    let functions = [brute_force, with_division, optimized_prod];
+    test(tests, functions)
 }

@@ -1,3 +1,4 @@
+import "./tester"
 
 function* pos_num_generator(x=1){
     while(true){
@@ -23,7 +24,7 @@ function non_linear_time(nums){
         let cur = pos_nums.next().value;
         flag = true;
         for(let i = 0; i < nums.length; i++){
-            if(cur === nums) {
+            if(cur === nums[i]) {
                 flag = false;
                 break;
             }
@@ -33,3 +34,11 @@ function non_linear_time(nums){
     }
 }
 
+function test_lowest_missing(){
+    let t1 = [3, 4, -1, 1];
+    let t2 = [1, 2, 0];
+    let functions = [non_constant_space, non_linear_time];
+    let tests = [t1, t2];
+
+    test.test(tests, functions)
+}
